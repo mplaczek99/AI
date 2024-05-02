@@ -73,10 +73,10 @@ def main():
     graph = load_graph('ctaTrain.json')
 
     while True:
-        start = input("1st name: (or \"quit\" to quit)").strip()
+        start = input("1st name: (or \"quit\" to quit) ").strip()
         if start.lower() == 'quit':
             break
-        end = input("2nd name: (or \"quit\" to quit)").strip()
+        end = input("2nd name: (or \"quit\" to quit) ").strip()
         if end.lower() == 'quit':
            break
 
