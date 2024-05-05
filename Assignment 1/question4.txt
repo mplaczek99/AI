@@ -1,0 +1,24 @@
+To make Prof Joe's Connect-4 program better, we can modify the program so that it looks at more than just the next move. This new program would be smarter because it thinks about what will happen several moves ahead.
+
+1. Multi-Ply Search Strategy
+
+    Minimax Algorithm: This method looks at the best moves a few turns ahead instead of just the next one. It sees what could happen if both players play their best moves up to a certain point. (Like chess engines)
+    Alpha-Beta Pruning: This is a trick to make the minimax algorithm faster by ignoring moves that won't affect the final decision. It helps the program think deeper without taking more time.
+
+2. Better Evaluation Function
+
+    Better Heuristic Metrics: Prof Joe’s program uses simple rules like blocking and making rows of pieces. This program now could use more complex ideas, like controlling the middle of the board and setting up multiple ways to win.
+    Dynamic Weighting: The program could change how important different things are based on how the game is going. This makes the AI smarter as the game changes.
+
+3. Adaptive Strategy
+
+    Learning from Past Games: The AI could be better by learning its previous games it has played before, adjusting its strategy to win more.
+    Opponent Modeling: If the AI can guess what the opponent will do next, it can play even smarter by preparing for those moves.
+
+4. Depth and Breadth of Search
+
+    Variable Depth Search: The program could change how deep it looks into the game depending on how complicated the game is at the moment. In simpler situations, it might look further ahead.
+    Iterative Deepening: This method helps the AI think deeply but also quickly. It starts by looking a few moves ahead and gradually goes deeper as time allows.
+
+By adding these features, this program can do much better than Prof Joe's original design, because it can plan ahead and adapt to what's happening in the game. This means the AI isn't just reacting to what’s happening now, but also preparing for what might come next.
+
