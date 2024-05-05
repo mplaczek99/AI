@@ -1,0 +1,12 @@
+Heuristic Function (h(n))
+
+For an A* algorithm, the heuristic function estimates the cost from a node to its goal. This estimation should never overestimate the real minimal cost. Here are simple and admissible heuristics you might consider:
+
+    Number of Edges: Since the graph does not have specific edge weights, using the number of edges as a heuristic (treating each edge as having the same cost) might be simple yet effective solution. This heuristic would assume that the graph is unweighted and each move from one node to another has the same cost.
+
+Cost Function (g(n))
+
+    Edge Count: Since the graph is unweighted, the cost function can just count the number of edges traversed from the start node to node n. This would represent the actual path cost as the total number of steps taken.
+
+Both these components are critical in A* for evaluating which paths are promising to explore further based on the combined estimated total cost (g(n) + h(n)) from the start to the goal via any node n. This makes A* efficient and ensures it finds the shortest path in terms of the number of steps if all edges are equal or the graph lacks additional data.
+
