@@ -13,24 +13,27 @@ def is_safe(board, row, col, counter):
 
 def solve_queens(board, row, counter):
     if row == len(board):
-        return True # All queens successfully placed
+        return True  # All queens successfully placed
 
     for col in range(len(board)):
         if is_safe(board, row, col, counter):
-            board[row] = col # Place queen
+            board[row] = col  # Place queen
             if solve_queens(board, row + 1, counter):
-                return True # Solution found, propagate success back up
+                return True  # Solution found, propagate success back up
             board[row] = -1  # Backtrack: Remove queen and try next column
 
-    return False # No valid position found for this row
+    return False  # No valid position found for this row
 
 
 def eight_queens_backtracking():
-    board = [-1] * 8 # Initialize the board with -1 indicating no queens present
+    board = [-1] * 8  # Initialize the board with -1 indicating no queens present
     counter = [0]  # Operation counter
     if solve_queens(board, 0, counter):
         return board, counter[0]
-    return [], counter[0] # Return an empty solution if not solvable (though solvable for 8x8)
+    return (
+        [],
+        counter[0],
+    )  # Return an empty solution if not solvable (though solvable for 8x8)
 
 
 def format_chess_notation(board):

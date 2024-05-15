@@ -12,7 +12,7 @@ def count_conflicts(board, row, col, counter):
                 or board[i] + i == col + row
             ):
                 conflicts += 1
-    counter[0] += 1 # Incremet the counter only once per full check
+    counter[0] += 1  # Incremet the counter only once per full check
     return conflicts
 
 
@@ -30,7 +30,7 @@ def eight_queens_random():
         queen = random.choice(conflict_indices)
         new_col = random.randint(0, 7)
 
-        while new_col == board[queen]: # Ensures that a new position is actually chosen
+        while new_col == board[queen]:  # Ensures that a new position is actually chosen
             new_col = random.randint(0, 7)
 
         board[queen] = new_col
