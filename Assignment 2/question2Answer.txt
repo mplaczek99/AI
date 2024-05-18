@@ -1,0 +1,67 @@
+Part A:
+	Every runner is health conscious
+		ForAll(X): Runner(X) -> HealthConscious(X)
+	
+	Someone is health conscious if and only if that person sees the doctor regularly
+		ForAll(X): HealthConscious(X) <-> SeeDoctor(X)
+	
+	Anyone who sees the doctor regularly and who has any health problem has that problem found early
+		ForAll(X,P): SeeDoctor(X) ∧ HealthProblem(X,P) -> FoundEarly(X,P)	
+	
+	Anyone who has any health problem and who has that problem found early gets that problem successfully treated
+		ForAll(X,P): HealthProblem(X,P) ∧ FoundEarly(X,P) -> SuccessfullyTreated(X,P) 	
+	
+	mike is a person and is a runner
+		Person(mike) ∧ Runner(mike)	
+	
+	mike has the health problem diabetes
+		HealthProblem(mike,diabetes)
+
+Part B:
+	Every runner is health conscious
+		ForAll(X): !Runner(X) ∨ HealthConscious(X)
+
+	Someone is health conscious if and only if that person sees the doctor regularly
+		ForAll(X): (!HealthConscious(X) ∨ SeeDoctor(X)) ∧ (!SeeDoctor(X) ∨ HealthConscious(X))
+
+	Anyone who sees the doctor regularly and who has any health problem has that problem found early
+		ForAll(X,P): !SeeDoctor(X) ∨ !HealthProblem(X,P) ∨ FoundEarly(X,P)
+
+	Anyone who has any health problem and who has that problem found early gets that problem successfully treated
+		ForAll(X,P): !HealthProblem(X,P) ∨ !FoundEarly(X,P) ∨ SuccessfullyTreated(X,P)
+
+	mike is a person and is a runner
+		Person(mike) ∧ Runner(mike)
+
+	mike has the health problem diabetes
+		HealthProblem(mike,diabetes)
+
+Part C:
+
+	From Runner(mike) and ForAll(X): !Runner(X) ∨ HealthConscious(X), we get:
+
+		HealthConscious(mike)
+
+	From HealthConscious(mike) and ForAll(X): (!HealthConscious(X) ∨ SeeDoctor(X)), we get:
+
+		SeeDoctor(mike)
+
+	From SeeDoctor(mike) and ForAll(X,P): !SeeDoctor(X) ∨ !HealthProblem(X,P) ∨ FoundEarly(X,P), we get:
+
+		!HealthProblem(mike,diabetes) ∨ FoundEarly(mike,diabetes)
+
+	From HealthProblem(mike,diabetes) and !HealthProblem(mike,diabetes) ∨ FoundEarly(mike,diabetes), we get:
+
+		FoundEarly(mike,diabetes)
+
+	From FoundEarly(mike,diabetes) and ForAll(X,P): !HealthProblem(X,P) ∨ !FoundEarly(X,P) ∨ SuccessfullyTreated(X,P), we get:
+
+		!HealthProblem(mike,diabetes) ∨ !FoundEarly(mike,diabetes) ∨ SuccessfullyTreated(mike,diabetes)
+
+	Simplifying step 5 with FoundEarly(mike,diabetes) from step 4, we get:
+
+		!HealthProblem(mike,diabetes) ∨ SuccessfullyTreated(mike,diabetes)
+
+	From HealthProblem(mike,diabetes), we can simplify to:
+
+		SuccessfullyTreated(mike,diabetes)
