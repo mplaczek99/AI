@@ -1,10 +1,10 @@
-mplaczek@thelio:~/Documents/Classes/AI/Assignments/Assignment 2$ /bin/python3 "/home/mplaczek/Documents/Classes/AI/Assignments/Assignment 2/systematic_backtracking.py"
-Backtracking Solution:  ['a8', 'e7', 'h6', 'f5', 'c4', 'g3', 'b2', 'd1']
-Operations:  2438
+mplaczek@thelio:~/Documents/Classes/AI/Assignments/Assignment 2$ python3 systematic_backtracking.py  
+Backtracking Solution:  ['a8', 'e7', 'h6', 'f5', 'c4', 'g3', 'b2', 'd1']                             
+Placement Attempts:  876
 
-mplaczek@thelio:~/Documents/Classes/AI/Assignments/Assignment 2$ /bin/python3 "/home/mplaczek/Documents/Classes/AI/Assignments/Assignment 2/heuristic_random_placement.py"
-Random Placement Solution:  ['g8', 'c7', 'h6', 'b5', 'e4', 'a3', 'f2', 'd1']
-Operations:  8504
+mplaczek@thelio:~/Documents/Classes/AI/Assignments/Assignment 2$ python3 heuristic_random_placement.py  
+Random Placement Solution:  ['d8', 'f7', 'h6', 'b5', 'g4', 'a3', 'c2', 'e1']
+Placement Attempts:  95979
 
 This proves that the systematic_backtracking (systematically, with backtracking) algorithm is much faster than the heuristic_random_placement (randomly assigned) algorithm. 
-However, it should be noted that, since random placement occurs, sometimes the algorithm may be faster, but that is rare.
+However, it should be noted that, since random placement occurs, in theory, the algorithm may be faster.

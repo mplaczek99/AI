@@ -1,30 +1,30 @@
 import random
 
 
-def count_conflicts(board, row, col, counter):
+def count_conflicts(board, row, col):
     conflicts = 0
     for i in range(len(board)):
         if i != row:
-            # Increment the counter only once per row check for efficiency
             if (
                 board[i] == col
                 or board[i] - i == col - row
                 or board[i] + i == col + row
             ):
                 conflicts += 1
-    counter[0] += 1  # Incremet the counter only once per full check
     return conflicts
 
 
 def eight_queens_random():
-    board = [random.randint(0, 7) for _ in range(8)]
-    counter = [0]  # Operation counter
+    counter = 0  # Operation counter for random attempts
     while True:
-        conflicts = [count_conflicts(board, i, board[i], counter) for i in range(8)]
+        board = [random.randint(0, 7) for _ in range(8)]
+        counter += 1  # Increment the counter for each random attempt
+
+        conflicts = [count_conflicts(board, i, board[i]) for i in range(8)]
         max_conflicts = max(conflicts)
 
         if max_conflicts == 0:
-            return board, counter[0]
+            return board, counter
 
         conflict_indices = [i for i, x in enumerate(conflicts) if x == max_conflicts]
         queen = random.choice(conflict_indices)
@@ -49,4 +49,4 @@ def format_chess_notation(board):
 random_solution, random_work = eight_queens_random()
 formatted_positions = format_chess_notation(random_solution)
 print("Random Placement Solution: ", formatted_positions)
-print("Operations: ", random_work)
+print("Placement Attempts: ", random_work)
